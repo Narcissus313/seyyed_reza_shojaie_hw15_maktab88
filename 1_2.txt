@@ -1,0 +1,76 @@
+users=[
+   {
+   "firstName": "reza",
+   "lastName": "yari",
+   "nc": 12123565,
+   "gender":"male",
+   "birthdate": ISODate("2000-12-10")
+},
+{
+   "firstName": "ali",
+   "lastName": "hamedi",
+   "nc": 56459981,
+   "gender":"male",
+   "birthdate": ISODate("1987-05-21")
+},
+{
+   "firstName": "sara",
+   "lastName": "danesh",
+   "nc": 89789654,
+   "gender":"female",
+   "birthdate": ISODate("2003-01-29")
+},{
+   "firstName": "hosein",
+   "lastName": "mahmoodi",
+   "nc": 89712355,
+   "gender":"male",
+   "birthdate": ISODate("1996-03-01")
+}
+]
+
+
+1. user usersDb
+
+2. db.createCollection('users')
+
+3. db.users.find().pretty()
+
+4. db.users.insertOne({
+   "firstName": "hosein",
+   "lastName": "mahmoodi",
+   "nc": 89712355,
+   "gender":"male",
+   "birthdate": ISODate("1996-03-01")
+})
+
+5. db.users.insertMany([
+   {
+   "firstName": "reza",
+   "lastName": "yari",
+   "nc": 12123565,
+   "gender":"male",
+   "birthdate": ISODate("2000-12-10")
+},
+{
+   "firstName": "ali",
+   "lastName": "hamedi",
+   "nc": 56459981,
+   "gender":"male",
+   "birthdate": ISODate("1987-05-21")
+},
+{
+   "firstName": "sara",
+   "lastName": "danesh",
+   "nc": 89789654,
+   "gender":"female",
+   "birthdate": ISODate("2003-01-29")
+}
+])
+
+6. db.users.updateOne({'firstName':'reza'}, {$set:{'firstName':'yaser'}})
+
+7. db.users.updateMany({'gender':'male'}, {$set:{'gender':'female'}})
+
+8. db.users.deleteOne({'firstName':'yaser'})
+
+9. db.users.deleteMany({'nc':{$gte:80000000}})
